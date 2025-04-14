@@ -1,0 +1,17 @@
+<article class="article-gift">
+    <img class="img-background" src="{{ gift.image }}" alt="Afbeeling niet gevonden">
+
+    <a href="/details/{{ gift.slug }}"><h3 class="gift-title">{{ gift.name }}</h3></a>
+
+    <form method="post" action="/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
+        {% if bookmarks contains gift.id %}
+        <!-- als het cadeau in de bookmark list zit, dan is de bookmark ican zwart -->
+            <button class="bookmark-icon" aria-label="verwijder uit bookmarks lijst"><svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.2051 56.1046V18.5052H52.3476V56.1046L38.3445 50.0956L37.7764 49.8518L37.2082 50.0956L23.2051 56.1046Z" fill="black" stroke="black" stroke-width="2.88143"/></svg></button>
+        {% else %}
+            <button class="bookmark-icon" aria-label="voeg toe aan bookmarks lijst"><svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="37.1791" cy="37.6791" rx="34.7846" ry="34.7846" fill="white"/><path d="M37.1791 73.6162C57.0266 73.6162 73.1162 57.5266 73.1162 37.6791C73.1162 17.8316 57.0266 1.74201 37.1791 1.74201C17.3316 1.74201 1.24201 17.8316 1.24201 37.6791C1.24201 57.5266 17.3316 73.6162 37.1791 73.6162Z" stroke="#C9C9C9" stroke-opacity="0.3" stroke-width="2.30504"/><path d="M23.2051 56.1046V18.5052H52.3476V56.1046L38.3445 50.0956L37.7764 49.8518L37.2082 50.0956L23.2051 56.1046Z" stroke="#212121" stroke-width="2.88143"/><path d="M46.1974 35.6563H39.0196V42.8341H36.627V35.6563H29.4492V33.2637H36.627V26.0859H39.0196V33.2637H46.1974V35.6563Z" fill="#212121"/></svg></button>
+        {% endif %}
+    </form>
+
+    <!-- saved-given uit partials -->
+    {% render 'partials/saved-given.liquid' %}
+</article>

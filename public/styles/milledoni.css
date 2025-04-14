@@ -1,0 +1,168 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+/* ====================================================== GLOBAL ====================================================== */
+body {
+    /* kleuren */
+    --background-primary: #F6F5F5;
+    --background-secondary: #EDEDED;
+    --background-dark: #212121;
+    --background-grey: #868686;
+
+    --text-primary: #212121;
+    --text-secondary: #9A9A9A;
+    --text-highlight: #F6F5F5;
+
+    --logo-primary: #212121;
+    --logo-secondary: #F6F5F5;
+
+    /* typografie */
+    --ff-primary: 'Parkinsans', sans-serif;
+
+    /* figma 20 */
+    --fs-primary: 1.25rem;
+    /* figma 22 */
+    --fs-s: 1.375rem;
+    /* figma 23 */
+    --fs-title-s: clamp(1.4375rem, calc(1.5vw + 1rem), 1.75rem);
+    /* figma 48 */
+    --fs-title-m: clamp(3rem, calc(3.3vw + 1rem), 4rem);
+    /* figma 68 */
+    --fs-title-l: clamp(2.5rem, calc(4vw + 1.5rem), 4rem);
+
+    --font-weight-regular: 400;
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    /* global text */
+    font-family: var(--ff-primary);
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+
+    --height-header: 9.5em;
+}
+
+
+/* ====================================================== TYPOGRAFIE ====================================================== */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/fonts/Parkinsans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/fonts/Parkinsans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/fonts/Parkinsans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/fonts/Parkinsans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/fonts/Parkinsans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/fonts/Parkinsans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+h1 {
+    font-size: var(--fs-title-l);
+    font-weight: var(--font-weight-regular);
+}
+
+h2 {
+    font-size: var(--fs-title-l);
+    font-weight: var(--font-weight-medium);
+}
+
+h3 {
+    font-size: var(--fs-title-s);
+    font-weight: var(--font-weight-medium);
+}
+
+
+
+
+
+/* ====================================================== FORMULIEREN ====================================================== */
+ul li {
+    list-style-type: none;
+    list-style: none;
+}
+
+/* a voor new line */
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.button-search {
+    background-color: var(--background-dark);
+    color: var(--text-highlight);
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+
+    &:active {
+        scale: 0.8;
+    }
+}
+
+.bookmark-icon {
+    background-color: var(--background-primary);
+    color: var(--text-highlight);
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.button-back {
+    display: inline-flex;
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    font-size: var(--fs-primary);
+    font-weight: var(--font-weight-medium);
+    
+    span {
+        margin-left: 0.3em;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid #FF0000;
+    outline-offset: 2px;
+}
