@@ -217,9 +217,9 @@ header {
             }
     
             img {
-                /* width: 5em; */
+                width: 5em;
                 margin-right: 5em;
-                /* height: auto; */
+                height: auto;
     
                 &:nth-of-type(1) {
                     grid-area: images;
