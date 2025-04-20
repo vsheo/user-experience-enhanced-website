@@ -721,8 +721,6 @@ header {
 
     .img-background {
         grid-area: img;
-        /* width: 100%; */
-        /* height: auto; */
         object-fit: cover;
         margin-top: 0.5em;
     }
@@ -744,6 +742,7 @@ header {
     .gift-title {
         grid-area: title;
         margin: .5em .5em;
+        height: 120px;
     }
 }
 
