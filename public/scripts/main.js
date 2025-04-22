@@ -103,3 +103,27 @@ if ("fetch" in window && "DOMParser" in window) {
         form.outerHTML = newState.outerHTML;
     });
 }
+
+
+// scroll up => header weg
+// scroll down => header terug
+const header = document.querySelector("header");
+// const containerGift = document.querySelector(".container-gift");
+const headerHeight = document.querySelector("header").offsetHeight;
+
+// main.style.top = headerHeight + "px";
+let lastScroll = 0;
+window.addEventListener("scroll", () => {
+  let currentScroll = window.pageYOffset;
+  if (currentScroll - lastScroll > 0) {
+    header.classList.add("scroll-down");
+    header.classList.remove("scroll-up");
+  }
+  else
+  {
+    // scrolled up -- header show
+    header.classList.add("scroll-up");
+    header.classList.remove("scroll-down");
+  }
+  lastScroll = currentScroll;
+})

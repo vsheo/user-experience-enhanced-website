@@ -3,6 +3,19 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-primary);
+
+    &.scroll-up {
+        transform: translateY(0);
+        transition: 0.5s;
+    }
+
+    &.scroll-down {
+        transform: translateY(-100%);
+        transition: 0.5s;
+    }
 
     h1 {
         display: flex;
@@ -263,6 +276,7 @@ header {
                 /* scrollen in de gifts container */
                 /* 100% - header height */
                 height: calc(100dvh - var(--height-header));
+                /* height: 100dvh; */
                 padding: 0 1em 0 1em;
                 overflow-x: auto;
                 scroll-behavior: smooth;
@@ -642,7 +656,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
     gap: 1em;
     align-items: center;
-    margin-top: 3em;
+    /* margin-top: 3em; */
 
     .article-login {
         display:grid;
