@@ -742,7 +742,7 @@ header {
             height: 75px;
         }
 
-        /* https: //cssloaders.github.io/ */
+        /* https://cssloaders.github.io/ */
         .loader {
             grid-area: img;
             justify-self: end;
