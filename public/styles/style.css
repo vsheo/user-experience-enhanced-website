@@ -802,6 +802,7 @@ header {
     .gift-title {
         grid-area: title;
         margin: .5em .5em;
+        overflow: hidden;
 
         @supports (-webkit-line-clamp: 2) {
             display: -webkit-box;
@@ -812,6 +813,7 @@ header {
 
         @media (min-width: 1100px) {
             font-size: var(--fs-title-s);
+            overflow: visible;
             height: 52px;
         }
     }
