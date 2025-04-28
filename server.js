@@ -24,8 +24,6 @@ app.get('/', async function (request, response) {
   const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={"milledoni_users_id":"2"}')
   const bookmarkedJSON = await bookmarked.json()
 
-  console.log(giftResponseJSON)
-
   let bookmarks = bookmarkedJSON.data.map(function(bookmark) {
     return bookmark.milledoni_products_id
   })
