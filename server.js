@@ -17,12 +17,14 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
   // Render index.liquid uit de Views map
   // Geef hier eventueel data aan mee
-  const giftResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,tags')
+  const giftResponse = await fetch('https://fdnd-agency.directus.app/items/milledoni_products/?fields=id,slug,name,image,tags,img.id,img.height,img.width,img.type&sort=id')
   const giftResponseJSON = await giftResponse.json()
 
   // alle bookmarked items
   const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={"milledoni_users_id":"2"}')
   const bookmarkedJSON = await bookmarked.json()
+
+  console.log(giftResponseJSON)
 
   let bookmarks = bookmarkedJSON.data.map(function(bookmark) {
     return bookmark.milledoni_products_id
@@ -55,8 +57,8 @@ app.post('/:id', async function (request, response) {
         'Content-Type': 'application/json',
       },
     })
-    console.log('Product verwijderd')
-    console.log(delResponse.status);
+    // console.log('Product verwijderd')
+    // console.log(delResponse.status);
   }
   // Voeg de nieuwe waarde toe aan de bookmark list in directus
   else {
@@ -70,7 +72,7 @@ app.post('/:id', async function (request, response) {
         milledoni_products_id: getId
       }),
     })
-    console.log('Product opgeslagen')
+    // console.log('Product opgeslagen')
   }
 
   // Redirect terug naar de index pagina
@@ -130,8 +132,8 @@ app.post('/details/:slug/:id', async function (request, response) {
         'Content-Type': 'application/json',
       },
     })
-    console.log('Product verwijderd')
-    console.log(delResponse.status);
+    // console.log('Product verwijderd')
+    // console.log(delResponse.status);
   }
   // Voeg de nieuwe waarde toe aan de bookmark list in directus
   else {
@@ -145,7 +147,7 @@ app.post('/details/:slug/:id', async function (request, response) {
         milledoni_products_id: getId
       }),
     })
-    console.log('Product opgeslagen')
+    // console.log('Product opgeslagen')
   }
 
   // Redirect terug naar dezelfde details pagina
@@ -187,7 +189,7 @@ app.get('/bookmark-list/:name', async function (request, response) {
   // gebruik de array om een URL te maken die de data ophaalt
   // filter={"id": {"_in": [1269, 895, 789]}}
   const bookmarkedGFift = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=image,id,name,slug&filter={"id":{"_in":"${productIdArray}"}}`
-  console.log(productIdArray)
+  // console.log(productIdArray)
 
   const myListResponse = await fetch(bookmarkedGFift)
   const myListResponseJSON = await myListResponse.json()

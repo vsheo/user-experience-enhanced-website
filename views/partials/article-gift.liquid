@@ -1,6 +1,7 @@
 <article class="article-gift">
-    <img class="img-background" src="{{ gift.image }}" width="300" height="300" alt="Afbeeling niet gevonden" loading="lazy">
-
+    {% if gift.img.id %}
+        <img class="img-background" src="https://fdnd-agency.directus.app/assets/{{ gift.img.id }}" width="{{ gift.img.width }}" height="{{ gift.img.height }}" alt="Afbeeling niet gevonden" loading="lazy">
+    {% endif %}
     <a href="/details/{{ gift.slug }}"><h3 class="gift-title">{{ gift.name }}</h3></a>
 
     <form method="post" action="/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
@@ -22,3 +23,6 @@
         <span class="given">+4 Given</span>
     </div>
 </article>
+
+
+{% comment %} <img src="https://fdnd-agency.directus.app/assets/{{ foto.id }}" width="{{ foto.width }}" height="{{ foto.height }}"> {% endcomment %}
