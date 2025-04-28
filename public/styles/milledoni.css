@@ -29,12 +29,15 @@ body {
     --fs-primary: 1.25rem;
     /* figma 22 */
     --fs-s: 1.375rem;
-    /* figma 23 */
-    --fs-title-s: clamp(1.4375rem, calc(1.5vw + 1rem), 1.75rem);
+    /* figma 24 */
+    --fs-title-s: 24px;
+    --fs-clamp-title-s: clamp(1.4375rem, calc(1.5vw + 1rem), 1.75rem);
     /* figma 48 */
-    --fs-title-m: clamp(3rem, calc(3.3vw + 1rem), 4rem);
+    --fs--title-m: 48px;
+    --fs-clamp-title-m: clamp(3rem, calc(3.3vw + 1rem), 4rem);
     /* figma 68 */
-    --fs-title-l: clamp(2.5rem, calc(4vw + 1.5rem), 4rem);
+    --fs--title-l: 68px;
+    --fs-clamp-title-l: clamp(2.5rem, calc(4vw + 1.5rem), 4rem);
 
     --font-weight-regular: 400;
     --font-weight-light: 300;
@@ -97,17 +100,17 @@ body {
 
 
 h1 {
-    font-size: var(--fs-title-l);
+    font-size: var(--fs-clamp-title-l);
     font-weight: var(--font-weight-regular);
 }
 
 h2 {
-    font-size: var(--fs-title-l);
+    font-size: var(--fs-clamp-title-l);
     font-weight: var(--font-weight-medium);
 }
 
 h3 {
-    font-size: var(--fs-title-s);
+    font-size: var(--fs-clamp-title-s);
     font-weight: var(--font-weight-medium);
 }
 

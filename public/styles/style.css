@@ -226,7 +226,7 @@ header {
             @media (min-width: 1100px) {
                 margin-left: 2em;
                 position: relative;
-                top: 30%;
+                /* top: 30%; */
             }
 
             img {
@@ -267,10 +267,12 @@ header {
 
         /* media queeries voor de gift container van de index pagina */
         & + .container-gift {
+            padding: 0 1em 0 1em;
+
             @media (min-width: 350px) {
                 place-items: center;
             }
-        
+
             @media (min-width: 1100px) {
                 width: 65dvw;
                 /* scrollen in de gifts container */
@@ -278,7 +280,8 @@ header {
                 height: calc(100dvh - var(--height-header));
                 /* height: 100dvh; */
                 padding: 0 1em 0 1em;
-                overflow-x: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
                 scroll-behavior: smooth;
             }
         }
@@ -646,7 +649,6 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
     gap: 1em;
     align-items: center;
-    /* margin-top: 3em; */
 
     .article-login {
         display:grid;
@@ -713,9 +715,16 @@ header {
     ;            
 
     background-color: white;
-    max-width: clamp(18em, 50vw, 17em);
+    width: clamp(18em, 50vw, 17em);
+    max-width: 343px;
     margin: 1em 0 1em 0;
     justify-self: center;
+    box-shadow: 2px 4px 10px 0px #00000021;
+
+
+    @media (min-width: 1100px) {
+        width: 343px;
+    }
 
     /* de elementen in de article blijven binnen de grid */
     &> * {
@@ -726,7 +735,7 @@ header {
     .img-background {
         grid-area: img;
         object-fit: cover;
-        margin-top: 0.5em;
+        margin: .5em .5em 0 .5em;
     }
 
     form {
@@ -794,6 +803,11 @@ header {
         grid-area: title;
         margin: .5em .5em;
         height: 120px;
+
+        @media (min-width: 1100px) {
+            font-size: var(--fs-title-s);
+            height: 96px;
+        }
     }
 
     .saved-given {
@@ -803,19 +817,34 @@ header {
         "img saved svg given"
         ;
         align-items: center;
-        width: 18em;
         overflow: hidden;
     
         img {
             grid-area: img;
+            height: 38px;
+            width: 38px;
+            margin-left: 1em;
     
             &:nth-of-type(2) {
-                margin-left: 1em;
+                margin-left: 2.5em;
             }
         }
     
         span {
             text-wrap: nowrap;
+        }
+
+        svg {
+            margin-left: 2.5em;
+        }
+
+        .given {
+            display: none;
+
+            @media (min-width: 1100px) {
+                display: block;
+            }
+
         }
     }
 }
