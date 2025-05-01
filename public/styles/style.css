@@ -162,10 +162,20 @@ header {
 
         h2 {
             max-width: 12ch;
-            margin: 2em 0.5em 0 0.5em;
+            margin: 2em 0.5em 3em 1em;
+
+            @media (min-width: 400px) {
+                margin: 2em 0.5em 0 0.5em;
+            }
             
             @media (min-width: 1100px) {
-                margin: 1em 0 0 0.5em;
+                margin: 1em 0 0 0.7em;
+                position: relative;
+                top: 3em;
+            }
+
+            @media (min-width: 1357px) {
+                top: 4em;
             }
         }
 
@@ -182,6 +192,10 @@ header {
                 left: 0;
                 top: 30%;
                 transform: none;
+            }
+
+            @media (min-width: 1357px) {
+                top: 40%;
             }
     
             .svg-mic {
@@ -221,14 +235,25 @@ header {
             display: grid;
             grid-template-columns: min-content 1fr;
             grid-template-areas:
-                "images tekst";
+                "images tekst"
+                ;
             align-items: center;
-            margin-top: 2em;
+            margin: 2em 0 4em 0;
+            column-gap: 4em;
+            display: none;
+
+            @media (min-width: 400px) {
+                display: grid;
+            }
 
             @media (min-width: 1100px) {
                 margin-left: 2em;
                 position: relative;
-                /* top: 30%; */
+                top: 30%;
+            }
+
+            @media (min-width: 1357px) {
+                top: 40%;
             }
 
             img {
@@ -241,19 +266,19 @@ header {
                 &:nth-of-type(2) {
                     grid-area: images;
                     position: relative;
-                    left: 1.5em;
+                    left: 3em;
                 }
     
                 &:nth-of-type(3) {
                     grid-area: images;
                     position: relative;
-                    left: 3em;
+                    left: 6em;
                 }
     
                 &:nth-of-type(4) {
                     grid-area: images;
                     position: relative;
-                    left: 4.5em;
+                    left: 9em;
                 }
             }
     
@@ -277,10 +302,6 @@ header {
 
             @media (min-width: 1100px) {
                 width: 65dvw;
-                /* scrollen in de gifts container */
-                /* 100% - header height */
-                /* height: calc(100dvh - var(--height-header)); */
-                /* height: 100dvh; */
                 padding: 0 1em 0 1em;
                 overflow-x: hidden;
                 overflow-y: auto;
