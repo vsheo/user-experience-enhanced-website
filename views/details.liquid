@@ -13,11 +13,11 @@
         <form method="post" action="/details/{{ clickedGiftData.slug }}/{{ clickedGiftData.id }}">
             {% for gift in allGifts %}
                 {% if bookmarks contains gift.id %}
-                <button class="add-to-bookmark">remove from <svg width="18" height="27" viewBox="0 0 20 29" xmlns="http://www.w3.org/2000/svg"><path d="M0.224854 28.2843V0.347656H19.5656V28.2843L9.89523 23.6282L0.224854 28.2843Z"/></svg></button>
-                {% break %}
+                    <button class="add-to-bookmark">remove from <svg width="18" height="27" viewBox="0 0 20 29" xmlns="http://www.w3.org/2000/svg"><path d="M0.224854 28.2843V0.347656H19.5656V28.2843L9.89523 23.6282L0.224854 28.2843Z"/></svg></button>
+                    {% break %}
                 {% else %}
-                <button class="add-to-bookmark">Add to <svg width="18" height="27" viewBox="0 0 20 29" xmlns="http://www.w3.org/2000/svg"><path d="M0.224854 28.2843V0.347656H19.5656V28.2843L9.89523 23.6282L0.224854 28.2843Z"/></svg></button>
-                {% break %}
+                    <button class="add-to-bookmark">Add to <svg width="18" height="27" viewBox="0 0 20 29" xmlns="http://www.w3.org/2000/svg"><path d="M0.224854 28.2843V0.347656H19.5656V28.2843L9.89523 23.6282L0.224854 28.2843Z"/></svg></button>
+                    {% break %}
                 {% endif %}
             {% endfor %}
         </form>

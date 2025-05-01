@@ -646,9 +646,13 @@ header {
     /* border-radius: 20px; */
     border-radius: 20px 20px 0px 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
-    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+    gap: 1.5em;
     align-items: center;
+
+    @media (min-width: 1100px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
 
     .article-login {
         display:grid;
@@ -723,7 +727,7 @@ header {
 
 
     @media (min-width: 1100px) {
-        width: 343px;
+        width: 100%;
     }
 
     /* de elementen in de article blijven binnen de grid */
