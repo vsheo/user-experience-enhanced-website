@@ -186,7 +186,7 @@ app.get('/bookmark-list/:name', async function (request, response) {
 
   // gebruik de array om een URL te maken die de data ophaalt
   // filter={"id": {"_in": [1269, 895, 789]}}
-  const bookmarkedGFift = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=image,id,name,slug&filter={"id":{"_in":"${productIdArray}"}}`
+  const bookmarkedGFift = `https://fdnd-agency.directus.app/items/milledoni_products/?fields=image,id,name,slug,img.id,img.height,img.width,img.type&filter={"id":{"_in":"${productIdArray}"}}`
   // console.log(productIdArray)
 
   const myListResponse = await fetch(bookmarkedGFift)
