@@ -788,7 +788,6 @@ header {
         object-fit: cover;
         margin: .5em .5em 0 .5em;
         background-color: var(--background-grey);
-        display: block;
         height: 295px;
     }
 
