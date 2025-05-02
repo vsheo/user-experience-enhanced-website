@@ -380,7 +380,8 @@ header {
             width: 100%;
             height: auto;
             max-width: 16em;
-            margin: 0.5em 0.5em 0.5em 1em;
+            /* margin: 0.5em 0.5em 0.5em 1em; */
+            padding: 1em;
 
             @media (min-width: 820px) {
                 grid-area: image;
@@ -464,10 +465,14 @@ header {
             gap: 1em;
             margin: 1em;
             background-color: #FFFFFF;
-            padding: 1em;
+            padding: .5em;
             border-radius: 20px;
 
             align-items: center;
+
+            @media (min-width: 340px) {
+                padding: 1em;
+            }
 
             @media (min-width: 1130px) {
                 margin-left: 5em;
@@ -496,10 +501,10 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 1em 0;
+            padding: 1em;
             background-color: #FFFFFF;
             border-radius: 20px;
-            /* max-width: 40em; */
+            margin: 1em;
 
             @media (min-width: 820px) {
                 display: grid;
@@ -656,12 +661,33 @@ header {
         }
     }
 
-    .article-gift {
-        margin-right: 1em;
-    }
+    .title-also-like {
+        margin: 2em 0 0 1em;
 
-    .container-gift {
-        margin-top: 0;
+        @media (min-width: 1130px) {
+            margin-left: 2em;
+        }
+    }
+    
+    & .container-gift {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        padding: 0 1em 1em 1em;
+        width: 100%;
+
+        .article-gift {
+            flex: 0 0 auto;
+            min-width: 250px;
+
+            &:first-of-type {
+                margin: 0 0 0 2em;
+
+                @media (min-width: 1130px) {
+                    margin-left: 6em;
+                }
+            }
+        }
     }
 }
 
@@ -842,7 +868,6 @@ header {
     background-color: white;
     width: clamp(18em, 50vw, 17em);
     max-width: 343px;
-    /* height: 510px; */
     margin: 1em 0 1em 0;
     justify-self: center;
     box-shadow: 2px 4px 10px 0px #00000021;
@@ -971,7 +996,7 @@ header {
         }
 
         svg {
-            margin-left: 2.5em;
+            margin-left: 1.5em;
         }
 
         .given {
