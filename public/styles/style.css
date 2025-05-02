@@ -372,7 +372,7 @@ header {
         }
 
         @media (min-width: 1130px) {
-            margin: 0 5em 3em 5em;
+            margin: 0 5em;
         }
 
         .img-carousel {
@@ -579,18 +579,33 @@ header {
     }
 
     .where-to-buy {
-        h3{
-            margin-top: 1em;
+        .section-title {
+            width: min-content;
+            text-wrap: nowrap;
+            margin: 1em 0 1em 1em;
+
+            @media (min-width: 1130px) {
+                margin: 2em 0 1em 3em;
+            }
         }
 
         .container-buy-option {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+            display: flex;
             gap: 1em;
             justify-items: center;
+            overflow-y: auto;
+
+            .map {
+                margin: 0 1em 0 3em;
+                border: 7px solid #FFFFFF;
+                border-radius: 15px;
+
+                @media (min-width: 1130px) {
+                    margin-left: 7em;
+                }
+            }
 
             .buy-option {
-                border: 1px solid black;
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-areas:
@@ -599,10 +614,19 @@ header {
                 "store"
                 ;
                 width: 15.5em;
+                height: 320px;
                 margin-bottom: 1em;
+                background-color: #FFFFFF;
+                border-radius: 15px;
+
+                &:last-of-type {
+                    margin-right: 5em;
+                }
 
                 h3 {
                     grid-area: title;
+                    font-size: var(--fs-title-s);
+                    padding: 0 1em;
                 }
 
                 button {
@@ -613,6 +637,10 @@ header {
                     width: min-content;
                     border-radius: 50%;
                     place-self: center;
+
+                    &:active {
+                        scale: 0.7;
+                    }
                 }
 
                 img {
@@ -622,6 +650,7 @@ header {
                 span {
                     grid-area: store;
                     margin-top: 0.5em;
+                    padding: 0 1.5em;
                 }
             }
         }
