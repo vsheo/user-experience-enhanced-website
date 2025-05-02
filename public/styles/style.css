@@ -767,6 +767,7 @@ header {
     background-color: white;
     width: clamp(18em, 50vw, 17em);
     max-width: 343px;
+    /* height: 510px; */
     margin: 1em 0 1em 0;
     justify-self: center;
     box-shadow: 2px 4px 10px 0px #00000021;
@@ -786,6 +787,9 @@ header {
         grid-area: img;
         object-fit: cover;
         margin: .5em .5em 0 .5em;
+        background-color: var(--background-grey);
+        display: block;
+        height: 295px;
     }
 
     form {
@@ -879,9 +883,9 @@ header {
     
         img {
             grid-area: img;
-            height: 38px;
-            width: 38px;
-            margin-left: 1em;
+            height: 55px;
+            width: 55px;
+            margin-left: .8em;
     
             &:nth-of-type(2) {
                 margin-left: 2.5em;

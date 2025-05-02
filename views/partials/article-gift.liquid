@@ -6,7 +6,8 @@
             <img src="https://fdnd-agency.directus.app/assets/{{ gift.img.id }}" width="343px" height="295px" alt="Afbeeling niet gevonden" loading="lazy">
         </picture>
     {% else %}
-        <img class="img-background" src="{{ gift.image }}" width="" height="" alt="Afbeeling niet gevonden" loading="lazy">
+        {% comment %} <img class="img-background" src="{{ gift.image }}" width="" height="" alt="Afbeeling niet gevonden" loading="lazy"> {% endcomment %}
+        <div class="img-background"></div>
     {% endif %}
 
     <a href="/details/{{ gift.slug }}"><h3 class="gift-title">{{ gift.name }}</h3></a>
