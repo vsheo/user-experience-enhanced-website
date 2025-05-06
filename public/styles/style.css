@@ -957,9 +957,9 @@ header {
         margin: .5em .5em;
         overflow: hidden;
 
-        @supports (-webkit-line-clamp: 2) {
+        @supports (-webkit-line-clamp: 1) {
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
         }
@@ -968,6 +968,13 @@ header {
             font-size: var(--fs-title-s);
             overflow: visible;
             height: 52px;
+
+            @supports (-webkit-line-clamp: 2) {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+            }
         }
     }
 
