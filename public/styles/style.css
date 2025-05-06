@@ -6,6 +6,7 @@ header {
     position: sticky;
     top: 0;
     background-color: var(--background-primary);
+    z-index: 1000;
 
     &.scroll-up {
         transform: translateY(0);
@@ -1033,6 +1034,24 @@ header {
         height: auto;
         object-fit: cover;
     }
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+/* .article-gift {
+    view-transition-class: gift;
+}
+
+.main-info-gift {
+    view-transition-class: gift;
+} */
+
+::view-transition-group(.gift) {
+    object-fit: none;
+    /* And hide parts of the image that go out of bounds */
+    overflow: clip;
 }
 
 
