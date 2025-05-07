@@ -1,9 +1,15 @@
 <!-- gifts container -->
 <section class="container-gift">
     <!-- artricle-gift uit partials -->
-    {% for gift in giftData %}
+    {% comment %} {% for gift in giftData %}
         {% render 'partials/article-gift.liquid', gift: gift, bookmarks: bookmarks %}
-    {%- endfor %}
+    {%- endfor %} {% endcomment %}
+
+    {% for gift in giftData %}
+        {% unless gift.id == excludeGift.id %}
+          {% render 'partials/article-gift.liquid', gift: gift, bookmarks: bookmarks %}
+        {% endunless %}
+    {% endfor %}
 
     <!-- reminder to log in -->
     <article class="article-login">

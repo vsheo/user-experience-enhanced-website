@@ -1040,17 +1040,13 @@ header {
     navigation: auto;
 }
 
-/* .article-gift {
-    view-transition-class: gift;
-}
-
-.main-info-gift {
-    view-transition-class: gift;
-} */
-
 ::view-transition-group(.gift) {
     object-fit: none;
-    /* And hide parts of the image that go out of bounds */
+    overflow: clip;
+}
+
+::view-transition-group(.clickedGiftData) {
+    object-fit: none;
     overflow: clip;
 }
 
