@@ -18,8 +18,7 @@
 
             <span class="total-ideas">
                 <!-- bereken hoeveel items in de lijst staan -->
-                <span>{{ list.saved_products.size }}</span>
-                <span>Cadeau ideeën</span>
+                <span>{{ list.liked_products.size }} Cadeau ideeën</span>
                 <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.949219 15.8433V0.789062H11.3714V15.8433L6.16032 13.3343L0.949219 15.8433Z" fill="#575757"/></svg>    
             </span>
 
@@ -33,4 +32,4 @@
     </section>
 </main>
 
-{% render 'partials/foot.liquid', squads: squads %}
+{% render 'partials/foot.liquid' %}
