@@ -209,6 +209,7 @@ header {
             bottom: 1em;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 999;
 
             @media (min-width: 1100px) {
                 position: relative;
@@ -802,56 +803,17 @@ header {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
-    .article-login {
-        display:grid;
-        grid-template-rows: 0.5fr 1fr 0.5fr;
-        grid-template-areas:
-          "title"
-          "svg-img"
-          "login"
-        ;  
-
-        border-radius: 21px;
-        background-color: var(--background-grey);
-        height: auto;
-        width: clamp(18em, 50vw, 23.5em);
-
-        h3 {
-            grid-area: title;
-            display: flex;
-            align-items: center;
-            margin: 0 1em;
-        }
-
-        img, svg {
-            grid-area: svg-img;
-            display: flex;
-            align-self: center;
-            justify-self: center;
-        }
-
-        img {
-            margin-left: 5em;
-            margin-bottom: 5em;
-        }
-
-        svg {
-            margin-top: 5em;
-            margin-right: 5em;
-        }
-
-        span {
-            grid-area: login;
-            display: flex;
-            align-self: center;
-            justify-self: center;
-            font-size: var(--fs-s);
-            font-weight: var(--font-weight-medium);
-            color: var(--text-highlight);
-            background-color: var(--background-dark);
-            padding: 1em;
-            border-radius: 40px;
-        }
+    .meer-resultaten {
+        background-color: var(--background-primary);
+        padding: 1em;
+        width: 7em;
+        aspect-ratio: 1;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+        border: 1px solid var(--background-dark);
+        border-radius: 50%;
     }
 }
 

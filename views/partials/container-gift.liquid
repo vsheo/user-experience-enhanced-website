@@ -8,6 +8,9 @@
                 {% render 'partials/article-gift.liquid', gift: gift, bookmarks: bookmarks %}
             {% endunless %}      
         {% endfor %}
+
+        {% comment %} button die terug gaat naar de hoofdpagina {% endcomment %}
+        <a class="meer-resultaten" href="/">meer resultaten</a>
     {% else %}
     {% comment %} voor de index pagina {% endcomment %}
         {% for gift in giftData %}
