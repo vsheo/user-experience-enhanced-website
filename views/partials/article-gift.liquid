@@ -6,11 +6,14 @@
             <article class="article-gift" style="view-transition-name: article-{{ gift.id }}">
                 <div class="img-background"></div>
 
-                <picture class="img-background">
-                    <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ gift.img.id }}?format=avif&width=343&height=295">
-                    <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ gift.img.id }}?format=webp">
-                    <img src="{{ gift.image }}" width="343px" height="295px" alt="Afbeeling niet gevonden" loading="lazy">
-                </picture>
+                <a href="/details/{{ gift.slug }}" class="img-background">
+                    <picture>
+                        <source type="image/avif" srcset="https://fdnd-agency.directus.app/assets/{{ gift.img.id }}?format=avif&width=343&height=295">
+                        <source type="image/webp" srcset="https://fdnd-agency.directus.app/assets/{{ gift.img.id }}?format=webp">
+                        <img src="{{ gift.image }}" width="343px" height="295px" alt="Afbeeling niet gevonden" loading="lazy">
+                    </picture>
+                </a>
+
                 <a href="/details/{{ gift.slug }}"><h3 class="gift-title">{{ gift.name }}</h3></a>
 
                 <form method="post" action="/{{ gift.id }}" data-enhanced="form-{{ gift.id }}">
