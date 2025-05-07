@@ -21,7 +21,7 @@ app.get('/', async function (request, response) {
   const giftResponseJSON = await giftResponse.json()
 
   // alle bookmarked items
-  const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={"milledoni_users_id":"2"}')
+  const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/?filter={"milledoni_users_id":"2"}')
   const bookmarkedJSON = await bookmarked.json()
 
   let bookmarks = bookmarkedJSON.data.map(function(bookmark) {
@@ -39,7 +39,7 @@ app.post('/:id', async function (request, response) {
   const getId = request.params.id;
 
   // url waar het cadeau opgeslagen moet worden
-  const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/'
+  const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/'
 
   // filter om te zoeken naar het cadeau,
   const GiftFilter = `?filter={"milledoni_users_id":"${loggedInUserID}","milledoni_products_id":"${getId}"}`;
@@ -94,7 +94,7 @@ app.get('/details/:slug', async function (request, response) {
   const allGiftsResponseJSON = await allGifts.json()
   
   // alle bookmarked items
-  const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/?filter={"milledoni_users_id":"2"}')
+  const bookmarked = await fetch('https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/?filter={"milledoni_users_id":"2"}')
   const bookmarkedJSON = await bookmarked.json()
   let bookmarks = bookmarkedJSON.data.map(function(bookmark) {
     return bookmark.milledoni_products_id
@@ -114,7 +114,7 @@ app.post('/details/:slug/:id', async function (request, response) {
   const getSlug = request.params.slug;
 
   // url waar het cadeau opgeslagen moet worden
-  const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products/'
+  const postURL = 'https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1/'
 
   // filter om te zoeken naar het cadeau,
   const GiftFilter = `?filter={"milledoni_users_id":"${loggedInUserID}","milledoni_products_id":"${getId}"}`;
@@ -171,7 +171,7 @@ app.get('/bookmark-list/:name', async function (request, response) {
   const getName = request.params.name;
 
   // haal alle items uit jou lijst op
-  const yourList = `https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,saved_products.milledoni_products_id&filter={"name":{"_icontains":"${getName}"}}`
+  const yourList = `https://fdnd-agency.directus.app/items/milledoni_users/?fields=name,liked_products.milledoni_products_id&filter={"name":{"_icontains":"${getName}"}}`
   const yourListResponse = await fetch(yourList)
   const yourListResponseJSON = await yourListResponse.json()
 
@@ -179,7 +179,7 @@ app.get('/bookmark-list/:name', async function (request, response) {
 
   // sla elke product id op in een array
   yourListResponseJSON.data.forEach(list => {
-    list.saved_products.forEach(product => {
+    list.liked_products.forEach(product => {
       productIdArray.push(product.milledoni_products_id)
     })
   })
