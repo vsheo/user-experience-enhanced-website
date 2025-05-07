@@ -206,10 +206,15 @@ header {
             display: flex;
             align-items: center;
             position: fixed;
+            z-index: 999;
             bottom: 1em;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 999;
+            margin-left: 2em;
+
+            @media (min-width: 460px) {
+                margin-left: 0;
+            }
 
             @media (min-width: 1100px) {
                 position: relative;
@@ -231,18 +236,31 @@ header {
                 left: 4em;
                 scale: 0.6;
                 flex-shrink: 0;
+                display: none;
+
+                @media (min-width: 460px) {
+                    display: block;
+                }
             }
     
             input {
                 padding: 2.5em 1em;
-                width: clamp(10em, 80vw, 37em);
+                width: 90vw;
                 border-radius: 3.5em;
                 border: 2px solid #C9C9C9;
+
+                @media (min-width: 460px) {
+                    width: clamp(10em, 80vw, 37em);
+                }
     
                 &::placeholder {
-                    padding-left: 3em;
+                    padding-left: 1em;
+                    margin-right: 2em;
                     font-size: var(--fs-s);
-                    opacity: 0;
+                    text-wrap: wrap;
+                    position: relative;
+                    bottom: 0.5em;
+                    /* opacity: 0; */
 
                     @supports (-webkit-line-clamp: 1) {
                         display: -webkit-box;
@@ -250,16 +268,25 @@ header {
                         -webkit-box-orient: vertical;
                         text-overflow: ellipsis;
                     }
-    
-                    @media (min-width: 600px) {
-                        opacity: 1;
+
+                    @media (min-width: 460px) {
+                        padding-left: 2.5em;
                     }
+
+                    @media (min-width: 568px) {
+                        bottom: 0;
+                    }
+    
+                    /* @media (min-width: 600px) {
+                        opacity: 1;
+                    } */
                 }
             }
     
-            button {
+            .button-search {
                 position: relative;
                 right: 6em;
+                scale: 0.8;
             }
         }
     
