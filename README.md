@@ -20,14 +20,21 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
       * [CSS](#CSS)<br/>
           * [Styleguide](#Styleguide)<br/>
           * [Styles](#Styles)<br/>
+          * [cadeau titel - 3 puntjes](#cadeau-titel---3-puntjes)<br/>
       * [HTML](#HTML)<br/>
           * [Liquid partials](#Liquid-partials)<br/>
               * [Cadeau](#Cadeau)<br/>
               * [Cadeau container](#Cadeau-container)<br/>
               * [Data van server.js naar partials](#Data-van-serverJS-naar-partials)<br/>
+              * [detail pagina - You may also like](#detail-pagina---you-may-also-like)<br/>
+          * [Images]<br/>
+              * [layout shift](#layout-shift)<br/>
+              * [responsive img](#responsive-img)<br/>
+              * [picture element](#picture-element)<br/>
       * [JavaScript](#JavaScript)<br/>
           * [back button](#back-button)<br/>
           * [client side fetch](#client-side-fetch)<br/>
+          * [sticky header](#sticky-header)<br/>
       * [Routes](#Routes)<br/>
           * [cadeau opslaan in bookmarks list](#cadeau-opslaan-in-bookmarks-list)<br/>
           * [link naar de details pagina](#link-naar-de-details-pagina)<br/>
@@ -38,6 +45,9 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
           * [success state](#success-state)<br/>
           * [empty state](#empty-state)<br/>
           * [loading state](#loading-state)<br/>
+      * [perceived performance](#perceived-performance)<br/>
+          * [visual time response](#visual-time-response)<br/>
+          * [lazy loading](#lazy-loading)<br/>
 
   * [Installatie](#installatie)
 
@@ -136,6 +146,20 @@ Bijbehorende CSS:
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/public/styles/style.css#L529-L613
 
 
+### cadeau titel - 3 puntjes
+Sommige cadeautjes hebben lange titels, waardoor sommige cadeautjes hoger werden dan andere.
+Dit kwam doordat de titels soms meerdere regels in beslag namen.
+
+Ik heb dit opgelost door de titels te verkorten met drie puntjes als ze te lang zijn:
+– Op mobiel worden titels beperkt tot maximaal 1 regel.
+– Op desktop versie tot maximaal 2 regels.
+
+Hierdoor blijven alle cadeaukaartjes even hoog en behouden ze een consistente layout.
+
+# foto titel mobile
+# foto titel desktop
+
+
 ### HTML
 In HTML hebben blok elementen, zoals article, een lege regel erboven en eronder.
 Inline elementen, zoals svg en anchor tag, staan op één regel.
@@ -190,6 +214,52 @@ In de partial van het cadeau gebruik ik de data voor de afbeelding, de naam van 
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/views/partials/article-gift.liquid#L5-L37
 
 
+#### detail pagina - You may also like
+in het design was er hier een grote verticale scroll container.
+
+# foto figma
+
+Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale scrollcontainer.
+Mijn gedachte achter deze wijziging is dat de detail pagina gericht is op het cadeau waar de gebruiker op dat moment naar kijkt.
+Daarom wilde ik de focus bij dit cadeau houden, in plaats van de gebruiker af te leiden met andere cadeaus.
+Op dit moment toon ik 6 cadeaus, en als de gebruiker meer resultaten wil zien, is er een knop die de gebruiker terug naar de hoofdpagina brengt om verder te zoeken.
+
+Ik heb deze wijziging zelf voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.
+
+# foto nieuw scroll container + button
+
+
+### Images
+#### layout shift
+Afbeeldingen hebben in de HTML een vaste hoogte en breedte. Hierdoor ontstaat er geen layout shift wanneer de HTML eerst wordt geladen en de afbeeldingen later ingeladen worden.
+
+# html code
+
+Om aan de gebruiker te laten zien dat er nog iets ingeladen moet worden, heb ik een grijze achtergrond toegevoegd.
+Dit heb ik gedaan door een div met een grijze achtergrond voor de picture tag te plaatsen die uiteindelijk de afbeelding toont.
+Binnen de grid bevinden beide elementen zich op exact dezelfde grid area, waardoor de afbeelding over de grijze achtergrond heen komt te staan.
+
+# foto grijze achtergrond
+
+#### responsive img
+In Directus hebben sommige cadeaus een img tag. Met de code die in deze tag staat, kun je de afbeelding ophalen via de URL:
+https://fdnd-agency.directus.app/assets/ + img tag
+Directus ondersteunt ook het opvragen van afbeeldingen in specifieke formaten, zoals avif of webp. Dit doe je door filters toe te voegen, bijvoorbeeld:
+?format=avif
+Daarnaast kun je ook een specifieke hoogte en breedte meegeven om layout shifts te voorkomen. bijvoorbeeld:
+?format=avif&width=343&height=295
+Door deze filters te gebruiken, kun je next gen image formats gebruiken en layout shifts op je website voorkomen.
+
+# voorbeeld picture element
+
+#### picture element
+In de HTML heb ik het picture element gebruikt.
+Dit element maakt het mogelijk om meerdere image formats aan te bieden. De browser kiest automatisch het eerste source element waarvan het formaat ondersteund wordt.
+Als geen van de source formaten wordt ondersteund, valt de browser automatisch terug op de img tag binnen het picture element.
+
+# voorbeeld code
+
+
 ### JavaScript
 #### back button
 Op de detailpagina is er een terugknop.
@@ -220,6 +290,13 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 Vervolgens kunnen we de loading class verwijderen en de nieuwe HTML in de DOM plaatsen.
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/public/scripts/main.js#L99-L103
 
+
+#### sticky header
+De header verdwijnt bij scrollen naar beneden en verschijnt weer bij scrollen naar boven.
+Ik heb dit gedaan zodat de cadeau container op de index pagina de volledige hoogte van het scherm kan gebruiken voor de .
+Voor mobiele apparaten is dit heel handig, omdat het scherm kleiner is. Als de gebruiker ver naar beneden is gescrold, hoeft die niet helemaal terug naar boven om de header weer te zien.
+
+# video header
 
 ### Routes
 #### cadeau opslaan in bookmarks list
@@ -302,6 +379,24 @@ Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklij
 Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, en in geval ze niet weten hoe ze cadeaus kunnen toevoegen, heb ik een voorbeeld video gemaakt.<br/>
 <img src="/bewijslast/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
 
+
+### perceived performance
+#### visual time response
+Ik heb een loading animatie toegevoegd aan de bookmarks.
+Als het iets langer duurt om een item toe te voegen aan de bookmarklijst, ziet de gebruiker deze animatie.
+Zo krijgt de gebruiker feedback dat er iets aan het gebeuren is.
+
+# video add to bookmarks
+
+#### lazy loading
+Op de afbeeldingen heb ik in de HTML de tag loading="lazy" toegevoegd.
+Dit betekent dat afbeeldingen pas worden ingeladen wanneer ze in beeld komen.
+Afbeeldingen die verder onderaan de pagina staan, worden daardoor pas later geladen.
+Dit zorgt ervoor dat de website sneller zichtbaar is voor de gebruiker.
+
+# code lazy loading
+
+
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
 - Download de nieuwste versie van Node.js (https://nodejs.org/en) op je laptop of computer.
@@ -320,91 +415,3 @@ Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, e
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
-
-
-
-
-
-
-
-### sticky header
-De header verdwijnt bij scrollen naar beneden en verschijnt weer bij scrollen naar boven.
-Ik heb dit gedaan zodat de cadeau container op de index pagina de volledige hoogte van het scherm kan gebruiken voor de .
-Voor mobiele apparaten is dit heel handig, omdat het scherm kleiner is. Als de gebruiker ver naar beneden is gescrold, hoeft die niet helemaal terug naar boven om de header weer te zien.
-
-video header
-
-
-### Images
-#### layout shift
-Afbeeldingen hebben in de HTML een vaste hoogte en breedte. Hierdoor ontstaat er geen layout shift wanneer de HTML eerst wordt geladen en de afbeeldingen later ingeladen worden.
-
-html code
-
-Om aan de gebruiker te laten zien dat er nog iets ingeladen moet worden, heb ik een grijze achtergrond toegevoegd.
-Dit heb ik gedaan door een div met een grijze achtergrond voor de picture tag te plaatsen die uiteindelijk de afbeelding toont.
-Binnen de grid bevinden beide elementen zich op exact dezelfde grid area, waardoor de afbeelding over de grijze achtergrond heen komt te staan.
-
-foto grijze achtergrond
-
-#### responsive img
-In Directus hebben sommige cadeaus een img tag. Met de code die in deze tag staat, kun je de afbeelding ophalen via de URL:
-https://fdnd-agency.directus.app/assets/ + img tag
-Directus ondersteunt ook het opvragen van afbeeldingen in specifieke formaten, zoals avif of webp. Dit doe je door filters toe te voegen, bijvoorbeeld:
-?format=avif
-Daarnaast kun je ook een specifieke hoogte en breedte meegeven om layout shifts te voorkomen. bijvoorbeeld:
-?format=avif&width=343&height=295
-Door deze filters te gebruiken, kun je next gen image formats gebruiken en layout shifts op je website voorkomen.
-
-voorbeeld picture element
-
-#### picture element
-In de HTML heb ik het picture element gebruikt.
-Dit element maakt het mogelijk om meerdere image formats aan te bieden. De browser kiest automatisch het eerste source element waarvan het formaat ondersteund wordt.
-Als geen van de source formaten wordt ondersteund, valt de browser automatisch terug op de img tag binnen het picture element.
-
-voorbeeld code
-
-### perceived performance
-#### visual time response
-Ik heb een loading animatie toegevoegd aan de bookmarks.
-Als het iets langer duurt om een item toe te voegen aan de bookmarklijst, ziet de gebruiker deze animatie.
-Zo krijgt de gebruiker feedback dat er iets aan het gebeuren is.
-
-video add to bookmarks
-
-#### lazy loading
-Op de afbeeldingen heb ik in de HTML de tag loading="lazy" toegevoegd.
-Dit betekent dat afbeeldingen pas worden ingeladen wanneer ze in beeld komen.
-Afbeeldingen die verder onderaan de pagina staan, worden daardoor pas later geladen.
-Dit zorgt ervoor dat de website sneller zichtbaar is voor de gebruiker.
-
-code lazy loading
-
-### 3 puntjes op cadeau titel
-Sommige cadeautjes hebben lange titels, waardoor sommige cadeautjes hoger werden dan andere.
-Dit kwam doordat de titels soms meerdere regels in beslag namen.
-
-Ik heb dit opgelost door de titels te verkorten met drie puntjes als ze te lang zijn:
-– Op mobiel worden titels beperkt tot maximaal 1 regel.
-– Op desktop versie tot maximaal 2 regels.
-
-Hierdoor blijven alle cadeaukaartjes even hoog en behouden ze een consistente layout.
-
-foto titel mobile
-foto titel desktop
-
-
-### detail pagina -  You may also like
-in het design was er hier een grote verticale scroll container.
-
-foto figma
-
-Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale scrollcontainer.
-Mijn gedachte achter deze wijziging is dat de detail pagina gericht is op het cadeau waar de gebruiker op dat moment naar kijkt.
-Daarom wilde ik de focus bij dit cadeau houden, in plaats van de gebruiker af te leiden met andere cadeaus.
-Op dit moment toon ik 6 cadeaus, en als de gebruiker meer resultaten wil zien, is er een knop die de gebruiker terug naar de hoofdpagina brengt om verder te zoeken.
-
-Ik heb deze wijziging zelf voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.
-
-foto nieuw scroll container + button
