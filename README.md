@@ -64,7 +64,7 @@ Op de detailpagina staat een beschrijving van het cadeau, samen met winkels waar
 Daaronder vind je meer cadeau recommendaties.
 
 De live site staat op Render. Het kan even duren voordat de website is geladen.
-[Milledoni.nl](https://the-web-is-for-everyone-interactive-7ked.onrender.com)
+[Milledoni.nl](https://user-experience-enhanced-website-0mef.onrender.com)
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
@@ -75,44 +75,28 @@ Op de Milledoni website kan hij door cadeautjes scrollen, beschrijvingen lezen e
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
 ### Responsive
 #### index pagina
-Voor het grootste deel van de responsiveheid op de indexpagina heb ik een grid gebruikt om automatisch een nieuwe kolom te maken zodra er voldoende ruimte is. Hiervoor heb ik in mijn grid-template-columns de functie repeat met auto-fit gebruikt om de kolommen te herhalen. Daarbij heb ik ook minmax toegepast om de minimale breedte te bepalen voordat er een nieuwe kolom wordt toegevoegd.
+Voor het grootste deel van de responsiveheid op de index pagina heb ik een grid gebruikt om automatisch een nieuwe kolom te maken zodra er voldoende ruimte is. Hiervoor heb ik in mijn grid-template-columns de functie repeat met auto-fit gebruikt om de kolommen te herhalen. Daarbij heb ik ook minmax toegepast om de minimale breedte te bepalen voordat er een nieuwe kolom wordt toegevoegd.
 Dit heb ik gedaan om minder met mediaqueries te werken en om te veel witruimte op grote schermen te voorkomen, doordat er automatisch een nieuwe kolom wordt toegevoegd.
 
-De index pagina is responsive vanaf 320 pixels.<br/>
-<img src="/bewijslast/resp-index-320px.png" alt="resp-index-320px" style="width: 50%;"><br/>
-Het eerste breakpoint is op 700px.<br/>
-<img src="/bewijslast/resp-index-700px.png" alt="resp-index-700px" style="width: 50%;"><br/>
-Bij 800px wordt er een extra kolom toegevoegd.<br/>
-<img src="/bewijslast/resp-index-880px.png" alt="resp-index-880px" style="width: 50%;"><br/>
-Bij 1100px begint de eerste laptop versie.<br/>
-<img src="/bewijslast/resp-index-1100px.png" alt="resp-index-1100px" style="width: 50%;"><br/>
-Voor schermen breder dan 1100px wordt er een extra kolom toegevoegd zodra er genoeg ruimte voor is.<br/>
-<img src="/bewijslast/resp-index-normaal.png" alt="resp-index-normaal" style="width: 50%;"><br/>
- 
+De index pagina is responsive vanaf 320 pixels. Deze video laat zien hoe de layout veranderd op verschillende schermen:<br/>
+
+https://github.com/user-attachments/assets/729a5d01-614b-4013-9408-56b88e387e9e
+
 
 #### details pagina
-De details pagina is responsive vanaf 320 pixels.<br/>
-<img src="/bewijslast/resp-details-320px.png" alt="resp-details-320px" style="width: 50%;"><br/>
-Als het scherm breder is, neemt de tekst meer ruimte in beslag.<br/>
-<img src="/bewijslast/resp-details-530px.png" alt="resp-details-530px" style="width: 50%;"><br/>
-<img src="/bewijslast/resp-details-700px.png" alt="resp-details-700px" style="width: 50%;"><br/>
-Dit is de tabletversie.<br/>
-<img src="/bewijslast/resp-details-820px.png" alt="resp-details-820px" style="width: 50%;"><br/>
-De laptopversie is nog niet af, dit is voorlopig de laptop versie.<br/>
-<img src="/bewijslast/resp-details-normaal.png" alt="resp-details-normaal" style="width: 50%;"><br/>
+De details pagina is responsive vanaf 320 pixels. Deze video laat zien hoe de layout veranderd op verschillende schermen:<br/>
 
+https://github.com/user-attachments/assets/69b57763-baee-454d-9d84-af3fd271fd01
 
 #### bookmarks overzicht pagina
-Deze pagina is nog niet responsive, dit is de één-kolomsversie.<br/>
+Deze pagina is nog niet responsive, dit is de one column versie.<br/>
 <img src="/bewijslast/resp-bk-overzicht.png" alt="resp-bk-overzicht" style="width: 50%;">
 
 
 #### bookmarkslijst pagina
-De bookmarkslijst pagina is ook responsive vanaf 320 pixels.<br/>
-<img src="/bewijslast/resp-bk-lijst-320px.png" alt="resp-bk-lijst-320px" style="width: 50%;"><br/>
-Deze pagina gebruikt hetzelfde grid als de indexpagina. Zodra er genoeg ruimte is, wordt er een extra kolom toegevoegd.<br/>
-<img src="/bewijslast/resp-bk-lijst-normaal.png" alt="resp-bk-lijst-normaal" style="width: 50%;"><br/>
+De bookmarkslijst pagina is ook responsive vanaf 320 pixels. Deze video laat zien hoe de layout veranderd op verschillende schermen:<br/>
 
+https://github.com/user-attachments/assets/7bc22186-fdb5-4781-baea-31507d01cd20
 
 ### CSS
 ### Styleguide
@@ -186,7 +170,7 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 container index pagina:<br/>
 <img src="/bewijslast/dry-container-1.png" alt="dry-container-1" style="width: 50%;"><br/>
 container details pagina:<br/>
-<img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;">
+<img src="/bewijslast/dry-container-2.png" alt="dry-container-2" style="width: 50%;">
 
 #### Data van serverJS naar partials
 In de index route geef ik de gegevens van alle cadeaus en de gegevens van alle bookmarks mee.
@@ -306,7 +290,7 @@ Wanneer er op het bookmark icoon wordt geklikt, wordt het cadeau toegevoegd aan 
 
 index pagina
 
-https://github.com/user-attachments/assets/e166483b-825c-41f3-8434-9163c710869c
+https://github.com/user-attachments/assets/35d983ac-8957-4e97-b50a-7b58490ff6f1
 
 details pagina
 
@@ -317,14 +301,6 @@ https://github.com/user-attachments/assets/6fe291c6-4f57-4af0-8183-18b4b1bfc824
 Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.<br/>
 Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, en in geval ze niet weten hoe ze cadeaus kunnen toevoegen, heb ik een voorbeeld video gemaakt.<br/>
 <img src="/bewijslast/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
-
-
-#### loading state
-Voor linkjes tussen pagina's komt er een loader in beeld.<br/>
-Dit heb ik gedaan omdat de volgende pagina soms wat tijd nodig heeft om in te laden. Om de gebruiker te laten weten dat er iets gebeurt, verschijnt er een loader op het scherm.<br/>
-
-https://github.com/user-attachments/assets/5c59a533-e9a8-4155-8b20-5cfcf41b487b
-
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
