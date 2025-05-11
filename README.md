@@ -155,11 +155,10 @@ Ik heb dit opgelost door de titels te verkorten met drie puntjes als ze te lang 
 – Op desktop versie tot maximaal 2 regels.
 
 Hierdoor blijven alle cadeaukaartjes even hoog en behouden ze een consistente layout.
-
-Verkorte titel op mobiel:
-<img src="/bewijslast/gift-title-1.png" alt="gift-title-1" style="width: 50%;">
-verkorte titel op desktop:
-<img src="/bewijslast/gift-title-2.png" alt="gift-title-2" style="width: 50%;">
+Verkorte titel op mobiel:<br/>
+<img src="/bewijslast/gift-title-1.png" alt="gift-title-1" style="width: 30%;"><br/>
+verkorte titel op desktop:<br/>
+<img src="/bewijslast/gift-title-2.png" alt="gift-title-2" style="width: 30%;">
 
 
 ### HTML
@@ -194,9 +193,9 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 En hier wordt op de details pagina de container veranderd naar een horizontrale scroll container:
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/public/styles/style.css#L701-L719
 container index pagina:<br/>
-<img src="/bewijslast/dry-container-1.png" alt="dry-container-1" style="width: 50%;"><br/>
+<img src="/bewijslast/dry-container-1.png" alt="dry-container-1" style="width: 80%;"><br/>
 container details pagina:<br/>
-<img src="/bewijslast/dry-container-2.png" alt="dry-container-2" style="width: 50%;">
+<img src="/bewijslast/dry-container-2.png" alt="dry-container-2" style="width: 80%;">
 
 #### Data van serverJS naar partials
 In de index route geef ik de gegevens van alle cadeaus en de gegevens van alle bookmarks mee.
@@ -217,19 +216,17 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 
 
 #### detail pagina - You may also like
-in het design was er hier een grote verticale scroll container.
-
-<img src="/bewijslast/gift-container-details-figma.png" alt="gift-container-details-figma" style="width: 50%;">
+in het design was er bij het "you may also like" een grote verticale scroll container.<br/>
+<img src="/bewijslast/gift-container-details-figma.png" alt="gift-container-details-figma" style="width: 50%;"><br/>
 
 Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale.
 Mijn gedachte achter deze wijziging is dat de detail pagina gericht is op het cadeau waar de gebruiker op dat moment naar kijkt.
 Daarom wilde ik de focus bij dit cadeau houden, in plaats van de gebruiker af te leiden met andere cadeaus.
 Op dit moment toon ik 6 cadeaus, en als de gebruiker meer resultaten wil zien, is er een knop die de gebruiker terug naar de hoofdpagina brengt om verder te zoeken.
 
-Ik heb deze wijziging voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.
-
-De nieuwe container:
-<img src="/bewijslast/gift-container-details-new.png" alt="gift-container-details-new" style="width: 50%;">
+Ik heb deze wijziging voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.<br/>
+De nieuwe container:<br/>
+<img src="/bewijslast/gift-container-details-new.png" alt="gift-container-details-new" style="width: 80%;">
 
 
 ### Images
@@ -306,7 +303,7 @@ De header verdwijnt bij scrollen naar beneden en verschijnt weer bij scrollen na
 Ik heb dit gedaan zodat de cadeau container op de index pagina de volledige hoogte van het scherm kan gebruiken voor de .
 Voor mobiele apparaten is dit heel handig, omdat het scherm kleiner is. Als de gebruiker ver naar beneden is gescrold, hoeft die niet helemaal terug naar boven om de header weer te zien.
 
-# video header
+https://github.com/user-attachments/assets/300abf83-ee1a-4d57-92d9-64afa959ff87
 
 ### Routes
 #### cadeau opslaan in bookmarks list
@@ -396,7 +393,8 @@ Ik heb een loading animatie toegevoegd aan de bookmarks.
 Als het iets langer duurt om een item toe te voegen aan de bookmarklijst, ziet de gebruiker deze animatie.
 Zo krijgt de gebruiker feedback dat er iets aan het gebeuren is.
 
-# video add to bookmarks
+https://github.com/user-attachments/assets/d3952f22-a3c3-494d-9005-30b1c92c7407
+
 
 #### lazy loading
 Op de afbeeldingen heb ik in de HTML de tag loading="lazy" toegevoegd.
