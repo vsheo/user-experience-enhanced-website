@@ -320,3 +320,91 @@ Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, e
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
+
+
+
+
+
+
+
+### sticky header
+De header verdwijnt bij scrollen naar beneden en verschijnt weer bij scrollen naar boven.
+Ik heb dit gedaan zodat de cadeau container op de index pagina de volledige hoogte van het scherm kan gebruiken voor de .
+Voor mobiele apparaten is dit heel handig, omdat het scherm kleiner is. Als de gebruiker ver naar beneden is gescrold, hoeft die niet helemaal terug naar boven om de header weer te zien.
+
+video header
+
+
+### Images
+#### layout shift
+Afbeeldingen hebben in de HTML een vaste hoogte en breedte. Hierdoor ontstaat er geen layout shift wanneer de HTML eerst wordt geladen en de afbeeldingen later ingeladen worden.
+
+html code
+
+Om aan de gebruiker te laten zien dat er nog iets ingeladen moet worden, heb ik een grijze achtergrond toegevoegd.
+Dit heb ik gedaan door een div met een grijze achtergrond voor de picture tag te plaatsen die uiteindelijk de afbeelding toont.
+Binnen de grid bevinden beide elementen zich op exact dezelfde grid area, waardoor de afbeelding over de grijze achtergrond heen komt te staan.
+
+foto grijze achtergrond
+
+#### responsive img
+In Directus hebben sommige cadeaus een img tag. Met de code die in deze tag staat, kun je de afbeelding ophalen via de URL:
+https://fdnd-agency.directus.app/assets/ + img tag
+Directus ondersteunt ook het opvragen van afbeeldingen in specifieke formaten, zoals avif of webp. Dit doe je door filters toe te voegen, bijvoorbeeld:
+?format=avif
+Daarnaast kun je ook een specifieke hoogte en breedte meegeven om layout shifts te voorkomen. bijvoorbeeld:
+?format=avif&width=343&height=295
+Door deze filters te gebruiken, kun je next gen image formats gebruiken en layout shifts op je website voorkomen.
+
+voorbeeld picture element
+
+#### picture element
+In de HTML heb ik het picture element gebruikt.
+Dit element maakt het mogelijk om meerdere image formats aan te bieden. De browser kiest automatisch het eerste source element waarvan het formaat ondersteund wordt.
+Als geen van de source formaten wordt ondersteund, valt de browser automatisch terug op de img tag binnen het picture element.
+
+voorbeeld code
+
+### perceived performance
+#### visual time response
+Ik heb een loading animatie toegevoegd aan de bookmarks.
+Als het iets langer duurt om een item toe te voegen aan de bookmarklijst, ziet de gebruiker deze animatie.
+Zo krijgt de gebruiker feedback dat er iets aan het gebeuren is.
+
+video add to bookmarks
+
+#### lazy loading
+Op de afbeeldingen heb ik in de HTML de tag loading="lazy" toegevoegd.
+Dit betekent dat afbeeldingen pas worden ingeladen wanneer ze in beeld komen.
+Afbeeldingen die verder onderaan de pagina staan, worden daardoor pas later geladen.
+Dit zorgt ervoor dat de website sneller zichtbaar is voor de gebruiker.
+
+code lazy loading
+
+### 3 puntjes op cadeau titel
+Sommige cadeautjes hebben lange titels, waardoor sommige cadeautjes hoger werden dan andere.
+Dit kwam doordat de titels soms meerdere regels in beslag namen.
+
+Ik heb dit opgelost door de titels te verkorten met drie puntjes als ze te lang zijn:
+– Op mobiel worden titels beperkt tot maximaal 1 regel.
+– Op desktop versie tot maximaal 2 regels.
+
+Hierdoor blijven alle cadeaukaartjes even hoog en behouden ze een consistente layout.
+
+foto titel mobile
+foto titel desktop
+
+
+### detail pagina -  You may also like
+in het design was er hier een grote verticale scroll container.
+
+foto figma
+
+Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale scrollcontainer.
+Mijn gedachte achter deze wijziging is dat de detail pagina gericht is op het cadeau waar de gebruiker op dat moment naar kijkt.
+Daarom wilde ik de focus bij dit cadeau houden, in plaats van de gebruiker af te leiden met andere cadeaus.
+Op dit moment toon ik 6 cadeaus, en als de gebruiker meer resultaten wil zien, is er een knop die de gebruiker terug naar de hoofdpagina brengt om verder te zoeken.
+
+Ik heb deze wijziging zelf voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.
+
+foto nieuw scroll container + button
