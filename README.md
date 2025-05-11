@@ -29,6 +29,7 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
               * [detail pagina - You may also like](#detail-pagina---you-may-also-like)<br/>
           * [Images]<br/>
               * [layout shift](#layout-shift)<br/>
+              * [Grey background](#grey-background)<br/>
               * [responsive img](#responsive-img)<br/>
               * [picture element](#picture-element)<br/>
       * [JavaScript](#JavaScript)<br/>
@@ -149,15 +150,16 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 ### cadeau titel - 3 puntjes
 Sommige cadeautjes hebben lange titels, waardoor sommige cadeautjes hoger werden dan andere.
 Dit kwam doordat de titels soms meerdere regels in beslag namen.
-
 Ik heb dit opgelost door de titels te verkorten met drie puntjes als ze te lang zijn:
 – Op mobiel worden titels beperkt tot maximaal 1 regel.
 – Op desktop versie tot maximaal 2 regels.
 
 Hierdoor blijven alle cadeaukaartjes even hoog en behouden ze een consistente layout.
 
-# foto titel mobile
-# foto titel desktop
+Verkorte titel op mobiel:
+<img src="/bewijslast/gift-title-1.png" alt="gift-title-1" style="width: 50%;">
+verkorte titel op desktop:
+<img src="/bewijslast/gift-title-2.png" alt="gift-title-2" style="width: 50%;">
 
 
 ### HTML
@@ -217,29 +219,29 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 #### detail pagina - You may also like
 in het design was er hier een grote verticale scroll container.
 
-# foto figma
+<img src="/bewijslast/gift-container-details-figma.png" alt="gift-container-details-figma" style="width: 50%;">
 
-Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale scrollcontainer.
+Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale.
 Mijn gedachte achter deze wijziging is dat de detail pagina gericht is op het cadeau waar de gebruiker op dat moment naar kijkt.
 Daarom wilde ik de focus bij dit cadeau houden, in plaats van de gebruiker af te leiden met andere cadeaus.
 Op dit moment toon ik 6 cadeaus, en als de gebruiker meer resultaten wil zien, is er een knop die de gebruiker terug naar de hoofdpagina brengt om verder te zoeken.
 
-Ik heb deze wijziging zelf voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.
+Ik heb deze wijziging voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.
 
-# foto nieuw scroll container + button
+De nieuwe container:
+<img src="/bewijslast/gift-container-details-new.png" alt="gift-container-details-new" style="width: 50%;">
 
 
 ### Images
 #### layout shift
 Afbeeldingen hebben in de HTML een vaste hoogte en breedte. Hierdoor ontstaat er geen layout shift wanneer de HTML eerst wordt geladen en de afbeeldingen later ingeladen worden.
 
-# html code
+voorbeeld op een img element
+https://github.com/vsheo/user-experience-enhanced-website/blob/8a1189782cb37f1a33e628c4817e583318b5c61f/views/index.liquid#L16
 
-Om aan de gebruiker te laten zien dat er nog iets ingeladen moet worden, heb ik een grijze achtergrond toegevoegd.
-Dit heb ik gedaan door een div met een grijze achtergrond voor de picture tag te plaatsen die uiteindelijk de afbeelding toont.
-Binnen de grid bevinden beide elementen zich op exact dezelfde grid area, waardoor de afbeelding over de grijze achtergrond heen komt te staan.
+Voor afbeeldingen uit Directus gebruik ik ?format=avif&width=343&height=295 om het formaat, de width en height op te geven.
+https://github.com/vsheo/user-experience-enhanced-website/blob/8a1189782cb37f1a33e628c4817e583318b5c61f/views/partials/article-gift.liquid#L10-L14
 
-# foto grijze achtergrond
 
 #### responsive img
 In Directus hebben sommige cadeaus een img tag. Met de code die in deze tag staat, kun je de afbeelding ophalen via de URL:
@@ -250,15 +252,23 @@ Daarnaast kun je ook een specifieke hoogte en breedte meegeven om layout shifts 
 ?format=avif&width=343&height=295
 Door deze filters te gebruiken, kun je next gen image formats gebruiken en layout shifts op je website voorkomen.
 
-# voorbeeld picture element
+https://github.com/vsheo/user-experience-enhanced-website/blob/8a1189782cb37f1a33e628c4817e583318b5c61f/views/partials/article-gift.liquid#L10-L14
+
 
 #### picture element
 In de HTML heb ik het picture element gebruikt.
 Dit element maakt het mogelijk om meerdere image formats aan te bieden. De browser kiest automatisch het eerste source element waarvan het formaat ondersteund wordt.
 Als geen van de source formaten wordt ondersteund, valt de browser automatisch terug op de img tag binnen het picture element.
 
-# voorbeeld code
+https://github.com/vsheo/user-experience-enhanced-website/blob/8a1189782cb37f1a33e628c4817e583318b5c61f/views/partials/article-gift.liquid#L10-L14
 
+
+#### Grey background
+Om aan de gebruiker te laten zien dat er nog iets ingeladen moet worden, heb ik een grijze achtergrond toegevoegd.
+Dit heb ik gedaan door een div met een grijze achtergrond voor de picture tag te plaatsen die uiteindelijk de afbeelding toont.
+Binnen de grid bevinden beide elementen zich op exact dezelfde grid area, waardoor de afbeelding over de grijze achtergrond heen komt te staan.
+
+<img src="/bewijslast/skeleton-state-2.png" alt="skeleton-state-2" style="width: 50%;">
 
 ### JavaScript
 #### back button
@@ -394,7 +404,7 @@ Dit betekent dat afbeeldingen pas worden ingeladen wanneer ze in beeld komen.
 Afbeeldingen die verder onderaan de pagina staan, worden daardoor pas later geladen.
 Dit zorgt ervoor dat de website sneller zichtbaar is voor de gebruiker.
 
-# code lazy loading
+https://github.com/vsheo/user-experience-enhanced-website/blob/8a1189782cb37f1a33e628c4817e583318b5c61f/views/partials/article-gift.liquid#L13
 
 
 ## Installatie
