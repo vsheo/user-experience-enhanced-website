@@ -56,7 +56,7 @@ app.post('/:id', async function (request, response) {
       },
     })
     // console.log('Product verwijderd')
-    // console.log(delResponse.status);
+    console.log(delResponse.status);
   }
   // Voeg de nieuwe waarde toe aan de bookmark list in directus
   else {

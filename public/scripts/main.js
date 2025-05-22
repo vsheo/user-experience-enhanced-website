@@ -108,22 +108,23 @@ if ("fetch" in window && "DOMParser" in window) {
 // scroll up => header weg
 // scroll down => header terug
 const header = document.querySelector("header");
-// const containerGift = document.querySelector(".container-gift");
+// offsetHeight heeft de height van de header in pixels terug
 const headerHeight = document.querySelector("header").offsetHeight;
 
-// main.style.top = headerHeight + "px";
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
   let currentScroll = window.pageYOffset;
-  if (currentScroll - lastScroll > 0) {
-    header.classList.add("scroll-down");
-    header.classList.remove("scroll-up");
-  }
-  else
-  {
-    // scrolled up -- header show
-    header.classList.add("scroll-up");
-    header.classList.remove("scroll-down");
-  }
-  lastScroll = currentScroll;
+    // als de currentScroll een negatief getal is, dan was het een scroll naar beneden. Dus de header gaat uitbeeld
+    if (currentScroll - lastScroll > 0) {
+        header.classList.add("scroll-down");
+        header.classList.remove("scroll-up");
+    }
+    // als het een positief getal is, dan komt de header terug in beeld
+    else
+    {
+        header.classList.add("scroll-up");
+        header.classList.remove("scroll-down");
+    }
+    lastScroll = currentScroll;
 })
+// Als JavaScript uit staat dan is de header altijd in beeld, omdat het position: sticky heeft.
