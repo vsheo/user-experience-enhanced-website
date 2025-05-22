@@ -101,7 +101,7 @@ https://github.com/user-attachments/assets/69b57763-baee-454d-9d84-af3fd271fd01
 
 #### bookmarks overzicht pagina
 Deze pagina is nog niet responsive, dit is de one column versie.<br/>
-<img src="/bewijslast/resp-bk-overzicht.png" alt="resp-bk-overzicht" style="width: 50%;">
+<img src="/bewijslast-sprint-10/resp-bk-overzicht.png" alt="resp-bk-overzicht" style="width: 50%;">
 
 
 #### bookmarkslijst pagina
@@ -136,8 +136,8 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 
 ### Styles
 In de Liquid-bestanden hebben de partials en elke pagina hun eigen CSS, die genest is. De main van de pagina's wordt genoemd naar de pagina naam, gevolgd door -main. Voor de partials gebruiken ze de class van de container.<br/>
-<img src="/bewijslast/css-main-nest.png" alt="css-main-nest" style="width: 50%;"><br/>
-<img src="/bewijslast/css-partials-nest.png" alt="css-partials-nest" style="width: 50%;">
+<img src="/bewijslast-sprint-10/css-main-nest.png" alt="css-main-nest" style="width: 50%;"><br/>
+<img src="/bewijslast-sprint-10/css-partials-nest.png" alt="css-partials-nest" style="width: 50%;">
 
 Verder zijn alle HTML blokken in CSS ook genest. Bijvoorbeeld een article met meerdere elementen daarin.
 In HTML geef ik het een class, en in CSS worden alle elementen binnen die class op dezelfde volgorde genest.
@@ -156,9 +156,9 @@ Ik heb dit opgelost door de titels te verkorten met drie puntjes als ze te lang 
 
 Hierdoor blijven alle cadeaukaartjes even hoog en behouden ze een consistente layout.
 Verkorte titel op mobiel:<br/>
-<img src="/bewijslast/gift-title-1.png" alt="gift-title-1" style="width: 30%;"><br/>
+<img src="/bewijslast-sprint-10/gift-title-1.png" alt="gift-title-1" style="width: 30%;"><br/>
 verkorte titel op desktop:<br/>
-<img src="/bewijslast/gift-title-2.png" alt="gift-title-2" style="width: 30%;">
+<img src="/bewijslast-sprint-10/gift-title-2.png" alt="gift-title-2" style="width: 30%;">
 
 
 ### HTML
@@ -177,11 +177,11 @@ De herhalende stukken HTML-code op de website zijn in een aparte Liquid-bestand 
 Dit article voor de cadeautjes wordt gebruikt op de index pagina, de detail pagina en de bookmarklijst pagina.
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/views/partials/article-gift.liquid#L1-L39
 Cadeau index pagina:<br/>
-<img src="/bewijslast/dry-article-1.png" alt="dry-article-1" style="width: 50%;"><br/>
+<img src="/bewijslast-sprint-10/dry-article-1.png" alt="dry-article-1" style="width: 50%;"><br/>
 Cadeau details pagina:<br/>
-<img src="/bewijslast/dry-article-2.png" alt="dry-article-2" style="width: 50%;"><br/>
+<img src="/bewijslast-sprint-10/dry-article-2.png" alt="dry-article-2" style="width: 50%;"><br/>
 Cadeau bookmarks pagina:<br/>
-<img src="/bewijslast/dry-article-3.png" alt="dry-article-3" style="width: 50%;">
+<img src="/bewijslast-sprint-10/dry-article-3.png" alt="dry-article-3" style="width: 50%;">
 
 #### Cadeau container
 De container onderaan de details pagina is hetzelfde als op de index pagina, met een paar kleine verschillen.
@@ -193,9 +193,9 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 En hier wordt op de details pagina de container veranderd naar een horizontrale scroll container:
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/public/styles/style.css#L701-L719
 container index pagina:<br/>
-<img src="/bewijslast/dry-container-1.png" alt="dry-container-1" style="width: 80%;"><br/>
+<img src="/bewijslast-sprint-10/dry-container-1.png" alt="dry-container-1" style="width: 80%;"><br/>
 container details pagina:<br/>
-<img src="/bewijslast/dry-container-2.png" alt="dry-container-2" style="width: 80%;">
+<img src="/bewijslast-sprint-10/dry-container-2.png" alt="dry-container-2" style="width: 80%;">
 
 #### Data van serverJS naar partials
 In de index route geef ik de gegevens van alle cadeaus en de gegevens van alle bookmarks mee.
@@ -217,7 +217,7 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 
 #### detail pagina - You may also like
 in het design was er bij het "you may also like" een grote verticale scroll container.<br/>
-<img src="/bewijslast/gift-container-details-figma.png" alt="gift-container-details-figma" style="width: 50%;"><br/>
+<img src="/bewijslast-sprint-10/gift-container-details-figma.png" alt="gift-container-details-figma" style="width: 50%;"><br/>
 
 Ik heb ervoor gekozen om de verticale scrollcontainer om te zetten naar een horizontale.
 Mijn gedachte achter deze wijziging is dat de detail pagina gericht is op het cadeau waar de gebruiker op dat moment naar kijkt.
@@ -226,7 +226,7 @@ Op dit moment toon ik 6 cadeaus, en als de gebruiker meer resultaten wil zien, i
 
 Ik heb deze wijziging voorgesteld aan de opdrachtgever tijdens de sprint review, en de opdrachtgever vond dit een goed idee.<br/>
 De nieuwe container:<br/>
-<img src="/bewijslast/gift-container-details-new.png" alt="gift-container-details-new" style="width: 80%;">
+<img src="/bewijslast-sprint-10/gift-container-details-new.png" alt="gift-container-details-new" style="width: 80%;">
 
 
 ### Images
@@ -265,7 +265,7 @@ Om aan de gebruiker te laten zien dat er nog iets ingeladen moet worden, heb ik 
 Dit heb ik gedaan door een div met een grijze achtergrond voor de picture tag te plaatsen die uiteindelijk de afbeelding toont.
 Binnen de grid bevinden beide elementen zich op exact dezelfde grid area, waardoor de afbeelding over de grijze achtergrond heen komt te staan.
 
-<img src="/bewijslast/skeleton-state-2.png" alt="skeleton-state-2" style="width: 50%;">
+<img src="/bewijslast-sprint-10/skeleton-state-2.png" alt="skeleton-state-2" style="width: 50%;">
 
 ### JavaScript
 #### back button
@@ -357,7 +357,7 @@ Als de response van de URL een 404 statuscode teruggeeft, betekent dit dat de pa
 In dat geval gebruiken we render('404.liquid') om de error pagina in te laden.
 https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a24380b985f87eff62b19aff7/server.js#L198-L201
 Op deze pagina is er een link terug naar de hoofdpagina.<br/>
-<img src="/bewijslast/error-404-pagina.png" alt="error-404-pagina" style="width: 50%;">
+<img src="/bewijslast-sprint-10/error-404-pagina.png" alt="error-404-pagina" style="width: 50%;">
 
 
 #### mobile testing
@@ -384,7 +384,7 @@ https://github.com/user-attachments/assets/6fe291c6-4f57-4af0-8183-18b4b1bfc824
 #### empty state
 Als er geen cadeaus zijn opgeslagen in de bookmarklijst, is er op de bookmarklijst pagina een video voorbeeld van hoe de gebruiker cadeaus kan opslaan.<br/>
 Deze pagina/state heb ik gemaakt zodat gebruikers weten dat hun lijst leeg is, en in geval ze niet weten hoe ze cadeaus kunnen toevoegen, heb ik een voorbeeld video gemaakt.<br/>
-<img src="/bewijslast/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
+<img src="/bewijslast-sprint-10/empty-bookmark-list.png" alt="empty-bookmark-list" style="width: 50%;">
 
 
 ### perceived performance
