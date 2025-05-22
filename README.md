@@ -300,7 +300,7 @@ https://github.com/vsheo/user-experience-enhanced-website/blob/584e67f860e7df4a2
 
 #### sticky header
 De header verdwijnt bij scrollen naar beneden en verschijnt weer bij scrollen naar boven.
-Ik heb dit gedaan zodat de cadeau container op de index pagina de volledige hoogte van het scherm kan gebruiken voor de .
+Ik heb dit gedaan zodat de cadeau container op de index pagina de volledige hoogte van het scherm kan gebruiken voor de cadeau's.
 Voor mobiele apparaten is dit heel handig, omdat het scherm kleiner is. Als de gebruiker ver naar beneden is gescrold, hoeft die niet helemaal terug naar boven om de header weer te zien.
 
 https://github.com/user-attachments/assets/300abf83-ee1a-4d57-92d9-64afa959ff87
