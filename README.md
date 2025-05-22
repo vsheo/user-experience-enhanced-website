@@ -305,6 +305,27 @@ Voor mobiele apparaten is dit heel handig, omdat het scherm kleiner is. Als de g
 
 https://github.com/user-attachments/assets/300abf83-ee1a-4d57-92d9-64afa959ff87
 
+Dit heb ik gedaan door de header position: sticky te geven. Hierdoor blijft de header altijd zichtbaar in beeld, ook wanneer JavaScript niet werkt.
+https://github.com/vsheo/user-experience-enhanced-website/blob/55af559757acb2ac51d30a2360a3b7f7f1f6e4d9/public/styles/style.css#L1-L9
+
+Met JavaScript selecteer ik de header en plaats ik een eventlistener op alle scrollbewegingen.
+https://github.com/vsheo/user-experience-enhanced-website/blob/7ada5647d3ecac5219d761afdd0935a50dad4d56/public/scripts/main.js#L110-L113
+
+Met pageYOffset krijg ik hoeveel pixels de pagina verticaal is verschoven
+https://github.com/vsheo/user-experience-enhanced-website/blob/7ada5647d3ecac5219d761afdd0935a50dad4d56/public/scripts/main.js#L114
+
+Als het verschil tussen de huidige en vorige pageYOffset positief is (dus bij scrollen naar beneden), voegen we de class "scroll-down" toe om de header buiten beeld te zetten
+https://github.com/vsheo/user-experience-enhanced-website/blob/7ada5647d3ecac5219d761afdd0935a50dad4d56/public/scripts/main.js#L116-L119
+
+De class "scroll-down" zorgt ervoor dat de header met een transition uit beeld verdwijnt
+https://github.com/vsheo/user-experience-enhanced-website/blob/7ada5647d3ecac5219d761afdd0935a50dad4d56/public/styles/style.css#L11-L19
+
+Als het verschil tussen de huidige en vorige pageYOffset negatief is (dus bij scrollen omhoog), wordt de header weer zichtbaar gemaakt door de class "scroll-up" toe te voegen
+https://github.com/vsheo/user-experience-enhanced-website/blob/7ada5647d3ecac5219d761afdd0935a50dad4d56/public/scripts/main.js#L121-L125
+
+Als laatste zetten we lastScroll gelijk aan currentScroll. Dit doen we zodat bij de volgende scroll de if statement uitgaat van de huidige scrollpositie, in plaats van altijd vanaf het begin van de pagina (bovenaan) te rekenen
+https://github.com/vsheo/user-experience-enhanced-website/blob/7ada5647d3ecac5219d761afdd0935a50dad4d56/public/scripts/main.js#L126
+
 ### Routes
 #### cadeau opslaan in bookmarks list
 Op de index pagina heeft elk cadeau een POST methode gekoppeld aan het bookmark icoon.
