@@ -108,8 +108,6 @@ if ("fetch" in window && "DOMParser" in window) {
 // scroll up => header weg
 // scroll down => header terug
 const header = document.querySelector("header");
-// offsetHeight heeft de height van de header in pixels terug
-const headerHeight = document.querySelector("header").offsetHeight;
 
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
